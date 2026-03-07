@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Master Dark Mode",
+  "description": "Dark mode and visual filters for online and local PDFs",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "file:///*",
+    "https://*/*.pdf"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PDF Master Dark Mode"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*.pdf",
+        "*://*/*.pdf?*",
+        "file:///*.pdf",
+        "file:///*.pdf?*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}
