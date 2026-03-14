@@ -7,7 +7,6 @@ const DEFAULTS = {
 };
 
 const darkModeToggle = document.getElementById('darkModeToggle');
-// const autoEnableToggle = document.getElementById('autoEnableToggle'); // <-- New element
 const brightnessSlider = document.getElementById('brightnessSlider');
 const contrastSlider = document.getElementById('contrastSlider');
 const grayscaleSlider = document.getElementById('grayscaleSlider');
@@ -25,7 +24,6 @@ const controls = document.querySelector('.controls');
 function getSettings() {
   return {
     darkMode: darkModeToggle.checked,
-    // autoEnable: autoEnableToggle.checked, // <-- Read new toggle
     brightness: parseInt(brightnessSlider.value, 10),
     contrast: parseInt(contrastSlider.value, 10),
     grayscale: parseInt(grayscaleSlider.value, 10),

@@ -4,12 +4,11 @@ A Chrome Extension (Manifest V3) that applies true dark mode and visual filters 
 
 ## What's New in Version 1.1
 * **Universal Web Support:** Expanded from a PDF-only tool to work seamlessly across all websites (`<all_urls>`).
-* **Smart Media & Logo Protection:** Custom CSS injection automatically protects standard images and videos from being color-inverted, while a "fuzzy matching" algorithm specifically rescues branding SVGs/logos without breaking essential navigation UI icons. 
+* **Smart Media Protection:** Custom CSS injection protects images, videos, and canvas elements from being double-inverted while dark mode is active.
 
 ## Core Features
 
 - **Dark Mode Toggle** – Inverts website colors using native CSS `invert` and `hue-rotate` for a true dark-mode experience that preserves image colors.
-- **Always Auto-Enable** – Automatically applies Dark Mode to any newly opened tab or PDF document.
 - **Brightness Slider** – Adjusts brightness between 50% and 150% (default 100%).
 - **Contrast Slider** – Adjusts contrast between 50% and 150% (default 100%).
 - **Grayscale Slider** – Converts the page to grayscale, 0%–100% (default 0%).
@@ -37,7 +36,7 @@ To use the extension on offline PDFs:
 1. Open any website or PDF in Chrome.
 2. Click the extension icon to open the control panel and adjust your sliders.
 3. **Keyboard Shortcut:** Press `Alt+Shift+D` (Windows/Linux) or `Ctrl+Shift+D` (Mac) to quickly toggle Dark Mode on or off without opening the menu.
-4. Click **Reset to Default** to instantly clear all applied filters.
+4. Click **Restore Default** to instantly clear all applied filters.
 
 ## File Overview
 
@@ -48,6 +47,7 @@ To use the extension on offline PDFs:
 | `popup.html` | Extension popup UI (sliders, toggles, reset button) |
 | `popup.css` | Dark-themed styling for the control panel |
 | `popup.js` | Logic for loading/saving settings and sending live updates |
-| `content.js` | Injects native CSS filters, the blue light overlay, and the smart media/logo protections into the page |
-| `icon16.png` | 16x16 Favicon |
-| `icon48.png` |
+| `content.js` | Injects native CSS filters, the blue light overlay, and media protection into the page |
+| `icons/icon-16.png` | 16x16 extension icon |
+| `icons/icon-48.png` | 48x48 extension icon |
+| `icons/icon-128.png` | 128x128 extension icon |

@@ -185,26 +185,6 @@ body {
   background-color: #fff;
 }
 
-/* File Warning Banner */
-.warning-banner {
-  display: none; /* Hidden by default */
-  background-color: #ff9800;
-  color: #1a1a2e;
-  padding: 12px 16px;
-  font-size: 12px;
-  line-height: 1.4;
-  border-bottom: 2px solid #e68a00;
-}
-
-.warning-banner.show {
-  display: block; /* Shown when JavaScript adds this class */
-}
-
-.warning-banner strong {
-  font-size: 13px;
-  color: #000;
-}
-
 .file-warning-box {
   background: #fff3cd;
   color: #856404;

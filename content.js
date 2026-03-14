@@ -3,7 +3,6 @@
 
   const DEFAULTS = {
     darkMode: false,
-    // autoEnable: false,
     brightness: 100,
     contrast: 100,
     grayscale: 0,
@@ -50,7 +49,7 @@
       if (!styleTag) {
         styleTag = document.createElement('style');
         styleTag.id = 'dark-mode-media-fix';
-        styleTag.textContent = 'img, video, canvas { filter: invert(100%) hue-rotate(180deg) !important; }';
+        styleTag.textContent = 'img, video, canvas, picture, svg[class*="logo" i], svg[id*="logo" i], [role="img"][class*="logo" i] { filter: invert(100%) hue-rotate(180deg) !important; }';
         document.head.appendChild(styleTag);
       }
     } else {
@@ -69,14 +68,6 @@
 
   // Load saved settings and apply immediately
   chrome.storage.local.get(DEFAULTS, function (saved) {
-    
-    // NEW LOGIC: If auto-enable is turned on, but dark mode is currently off, force it on.
-    // if (saved.autoEnable && !saved.darkMode) {
-    //   saved.darkMode = true;
-    //   // Save this forced state so the popup syncs up
-    //   chrome.storage.local.set({ darkMode: true }); 
-    // }
-
     applySettings(saved);
   });
 
