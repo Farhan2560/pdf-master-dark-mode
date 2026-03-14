@@ -1,4 +1,4 @@
-# Universal Dark Mode Master
+# Total Eclipse
 
 A Chrome Extension (Manifest V3) that applies true dark mode and visual filters to the entire internet—including local PDF files—using Chrome's native document rendering.
 
@@ -29,7 +29,7 @@ A Chrome Extension (Manifest V3) that applies true dark mode and visual filters 
 ### Enabling Local File Access
 To use the extension on offline PDFs:
 1. Go to `chrome://extensions`.
-2. Find **Universal Dark Mode Master** and click **Details**.
+2. Find **Total-Eclipse** and click **Details**.
 3. Enable **Allow access to file URLs**.
 
 ## Usage & Shortcuts
@@ -50,4 +50,4 @@ To use the extension on offline PDFs:
 | `popup.js` | Logic for loading/saving settings and sending live updates |
 | `content.js` | Injects native CSS filters, the blue light overlay, and the smart media/logo protections into the page |
 | `icon16.png` | 16x16 Favicon |
-| `icon48.png
+| `icon48.png` |

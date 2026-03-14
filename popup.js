@@ -1,6 +1,5 @@
 const DEFAULTS = {
   darkMode: false,
-  autoEnable: false, // <-- New default added
   brightness: 100,
   contrast: 100,
   grayscale: 0,
@@ -8,7 +7,7 @@ const DEFAULTS = {
 };
 
 const darkModeToggle = document.getElementById('darkModeToggle');
-const autoEnableToggle = document.getElementById('autoEnableToggle'); // <-- New element
+// const autoEnableToggle = document.getElementById('autoEnableToggle'); // <-- New element
 const brightnessSlider = document.getElementById('brightnessSlider');
 const contrastSlider = document.getElementById('contrastSlider');
 const grayscaleSlider = document.getElementById('grayscaleSlider');
@@ -33,7 +32,7 @@ function getSettings() {
 
 function applySettingsToUI(settings) {
   darkModeToggle.checked = settings.darkMode;
-  autoEnableToggle.checked = settings.autoEnable; // <-- Update new toggle
+  // autoEnableToggle.checked = settings.autoEnable; // <-- Update new toggle
   brightnessSlider.value = settings.brightness;
   contrastSlider.value = settings.contrast;
   grayscaleSlider.value = settings.grayscale;
@@ -47,8 +46,8 @@ function applySettingsToUI(settings) {
 
 // ... keep all your existing sendToActiveTab and onSettingsChange code down here ...
 
-// Just add the event listener for the new toggle at the very bottom:
-autoEnableToggle.addEventListener('change', onSettingsChange);
+
+// autoEnableToggle.addEventListener('change', onSettingsChange);
 
 
 

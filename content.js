@@ -3,7 +3,7 @@
 
   const DEFAULTS = {
     darkMode: false,
-    autoEnable: false,
+    // autoEnable: false,
     brightness: 100,
     contrast: 100,
     grayscale: 0,
@@ -19,6 +19,7 @@
   // We still use an overlay for this because CSS doesn't have a native "orange tint" filter
   const blueLightOverlay = document.createElement('div');
   blueLightOverlay.id = 'pdf-master-bluelight-overlay';
+
   blueLightOverlay.style.cssText = [
     'position: fixed',
     'inset: 0',
@@ -70,11 +71,11 @@
   chrome.storage.local.get(DEFAULTS, function (saved) {
     
     // NEW LOGIC: If auto-enable is turned on, but dark mode is currently off, force it on.
-    if (saved.autoEnable && !saved.darkMode) {
-      saved.darkMode = true;
-      // Save this forced state so the popup syncs up
-      chrome.storage.local.set({ darkMode: true }); 
-    }
+    // if (saved.autoEnable && !saved.darkMode) {
+    //   saved.darkMode = true;
+    //   // Save this forced state so the popup syncs up
+    //   chrome.storage.local.set({ darkMode: true }); 
+    // }
 
     applySettings(saved);
   });
