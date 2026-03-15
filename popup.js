@@ -28,6 +28,18 @@ function updateSliderVisual(sliderEl) {
   const range = max - min;
   const pct = range > 0 ? ((value - min) / range) * 100 : 0;
   sliderEl.style.setProperty('--pct', pct + '%');
+  
+  const row = sliderEl.closest('.control-row');
+  if (row) {
+    row.style.setProperty('--pct-val', pct);
+  }
+}
+
+function updateToggleVisual() {
+  const row = darkModeToggle.closest('.control-row');
+  if (row) {
+    row.style.setProperty('--pct-val', darkModeToggle.checked ? 100 : 0);
+  }
 }
 
 function updateAllSliderVisuals() {
@@ -35,6 +47,7 @@ function updateAllSliderVisuals() {
   updateSliderVisual(contrastSlider);
   updateSliderVisual(grayscaleSlider);
   updateSliderVisual(blueLightSlider);
+  updateToggleVisual();
 }
 
 function getSettings() {
@@ -147,8 +160,32 @@ chrome.storage.local.get(DEFAULTS, function (saved) {
   updateFileAccessWarning();
 });
 
+// Step buttons functionality
+document.querySelectorAll('.icon-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const targetId = this.getAttribute('data-target');
+    const slider = document.getElementById(targetId);
+    if (!slider) return;
+    
+    const step = this.classList.contains('plus-btn') ? 5 : -5;
+    const min = parseInt(slider.min, 10);
+    const max = parseInt(slider.max, 10);
+    let val = parseInt(slider.value, 10);
+    
+    val += step;
+    if (val > max) val = max;
+    if (val < min) val = min;
+    
+    slider.value = val;
+    slider.dispatchEvent(new Event('input'));
+  });
+});
+
 // Attach event listeners
-darkModeToggle.addEventListener('change', onSettingsChange);
+darkModeToggle.addEventListener('change', function() {
+  updateToggleVisual();
+  onSettingsChange();
+});
 
 brightnessSlider.addEventListener('input', function () {
   updateSliderVisual(brightnessSlider);
@@ -188,6 +225,7 @@ chrome.storage.onChanged.addListener(function (changes, namespace) {
   if (namespace === 'local' && changes.darkMode) {
     // Update the toggle UI to match the new background state
     darkModeToggle.checked = changes.darkMode.newValue;
+    updateToggleVisual();
   }
 });
 

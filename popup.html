@@ -14,7 +14,7 @@
       <button id="openSettingsBtn">Go to settings</button>
     </div>
     <header class="popup-header">
-      <h1>Total Eclipse</h1>
+      <h1>Total Eclipse🌜</h1>
     </header>
 
    
@@ -23,9 +23,9 @@
       <!-- Dark Mode Toggle -->
       <div class="control-row toggle-row">
         <span class="control-label">Dark Mode</span>
-        <label class="toggle-switch">
-          <input type="checkbox" id="darkModeToggle" />
-          <span class="toggle-slider"></span>
+        <label class="mech-checkbox-label">
+          <input type="checkbox" id="darkModeToggle" class="mech-checkbox" />
+          <span class="mech-btn"></span>
         </label>
       </div>
 
@@ -35,14 +35,18 @@
           <span class="control-label">Brightness</span>
           <span class="control-value" id="brightnessValue">100%</span>
         </div>
-        <input
-          type="range"
-          id="brightnessSlider"
-          class="slider"
-          min="50"
-          max="150"
-          value="100"
-        />
+        <div class="slider-container">
+          <button class="icon-btn minus-btn" data-target="brightnessSlider">−</button>
+          <input
+            type="range"
+            id="brightnessSlider"
+            class="slider"
+            min="50"
+            max="150"
+            value="100"
+          />
+          <button class="icon-btn plus-btn" data-target="brightnessSlider">+</button>
+        </div>
       </div>
 
       <!-- Contrast Slider -->
@@ -51,14 +55,18 @@
           <span class="control-label">Contrast</span>
           <span class="control-value" id="contrastValue">100%</span>
         </div>
-        <input
-          type="range"
-          id="contrastSlider"
-          class="slider"
-          min="50"
-          max="150"
-          value="100"
-        />
+        <div class="slider-container">
+          <button class="icon-btn minus-btn" data-target="contrastSlider">−</button>
+          <input
+            type="range"
+            id="contrastSlider"
+            class="slider"
+            min="50"
+            max="150"
+            value="100"
+          />
+          <button class="icon-btn plus-btn" data-target="contrastSlider">+</button>
+        </div>
       </div>
 
       <!-- Grayscale Slider -->
@@ -67,14 +75,18 @@
           <span class="control-label">Grayscale</span>
           <span class="control-value" id="grayscaleValue">0%</span>
         </div>
-        <input
-          type="range"
-          id="grayscaleSlider"
-          class="slider"
-          min="0"
-          max="100"
-          value="0"
-        />
+        <div class="slider-container">
+          <button class="icon-btn minus-btn" data-target="grayscaleSlider">−</button>
+          <input
+            type="range"
+            id="grayscaleSlider"
+            class="slider"
+            min="0"
+            max="100"
+            value="0"
+          />
+          <button class="icon-btn plus-btn" data-target="grayscaleSlider">+</button>
+        </div>
       </div>
 
       <!-- Blue Light Filter Slider -->
@@ -83,14 +95,18 @@
           <span class="control-label">Blue Light Filter</span>
           <span class="control-value" id="blueLightValue">0%</span>
         </div>
-        <input
-          type="range"
-          id="blueLightSlider"
-          class="slider"
-          min="0"
-          max="50"
-          value="0"
-        />
+        <div class="slider-container">
+          <button class="icon-btn minus-btn" data-target="blueLightSlider">−</button>
+          <input
+            type="range"
+            id="blueLightSlider"
+            class="slider"
+            min="0"
+            max="50"
+            value="0"
+          />
+          <button class="icon-btn plus-btn" data-target="blueLightSlider">+</button>
+        </div>
       </div>
 
       <div class="control-row">
